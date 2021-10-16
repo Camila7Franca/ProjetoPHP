@@ -1,0 +1,13 @@
+
+$numerosRequisitaramFatorial = array();
+$numerosPrimos = array();
+$numerosPerfeitos = array();
+
+echo "<p>Números que chamaram a função fatorial: </p>";
+print_r($numerosRequisitaramFatorial);
+
+echo "<p>Números primos encontrados: </p>";
+print_r($numerosPrimos);
+
+echo "<p>Números perfeitos: </p>";
+print_r($numerosPerfeitos);
