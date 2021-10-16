@@ -1,3 +1,7 @@
+$numerosRequisitaramFatorial = array();
+$numerosPrimos = array();
+$numerosPerfeitos = array();
+
 function fatorial($_numero)
 {
     $fatorial = 1;
