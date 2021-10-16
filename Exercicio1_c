@@ -1,1 +1,30 @@
+$numerosRequisitaramFatorial = array();
+$numerosPrimos = array();
+$numerosPerfeitos = array();
 
+function numeroPrimoOuComposto($numero)
+{
+    $ePrimo = true;
+    $contador = 2;
+    do {
+
+        if ($numero == 2) break;
+
+        if ($numero % $contador == 0) {
+            $ePrimo = false;
+        }
+
+        $contador++;
+    } while ($contador < $numero);
+
+    echo "<b>Número $numero</b>";
+
+    echo $ePrimo ? "<p>é primo</p>" : "<p>é composto</p>";
+
+    return $ePrimo;
+}
+
+numeroPrimoOuComposto(2) ? array_push($numerosPrimos, 2) : null;
+numeroPrimoOuComposto(5) ? array_push($numerosPrimos, 5) : null;
+numeroPrimoOuComposto(10) ? array_push($numerosPrimos, 10) : null;
+numeroPrimoOuComposto(11) ? array_push($numerosPrimos, 11) : null;
