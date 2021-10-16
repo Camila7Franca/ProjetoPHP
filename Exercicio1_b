@@ -1,0 +1,17 @@
+function fatorial($_numero)
+{
+    $fatorial = 1;
+    $contador = 1;
+
+    while ($contador <= $_numero) {
+        $fatorial *= $contador;
+        $contador++;
+    }
+    echo "<p>Resultado fatorial de $_numero: $fatorial</p>";
+
+    return $_numero;
+}
+
+array_push($numerosRequisitaramFatorial, fatorial(5));
+array_push($numerosRequisitaramFatorial, fatorial(3));
+array_push($numerosRequisitaramFatorial, fatorial(10));
