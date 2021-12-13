@@ -1,0 +1,42 @@
+<?php
+/** 
+* Manipulando arquivos JSON e XML com PHP
+*/
+
+$json = '{"Camila":["Teste1","Teste2","Teste3","Teste4","Teste5","Teste6","Teste7","Teste8","Teste9"]}';
+
+ function array2xml( $array, $xml = false) {
+    
+    if ( $xml === false ) {
+      $xml = new SimpleXMLElement('<result/>');
+    }
+    
+    foreach( $array as $key => $value ) {
+      
+        if ( is_array( $value ) ) {
+          array2xml( $value, $xml->addChild( $key ) );
+        } else {
+          $xml->addChild( $key, $value );
+        }
+    }
+    
+    return $xml->asXML();
+}
+
+$jSON = json_decode($json, true);
+
+$xml = array2xml( $jSON, false );
+
+echo '<pre>';print_r( $xml );
+
+//FIM
+
+/** 
+* Consumindo uma API pública com PHP
+* Instalar API Unirest através do composer pelo terminal: composer require mashape/unirest-php
+*/
+
+$headers = array('Accept' => 'application/json');
+$query = array('foo' => 'hello', 'bar' => 'world');
+$response = Unirest\Request::post('http://url-do-endpoint/', $headers, $query);
+ 
